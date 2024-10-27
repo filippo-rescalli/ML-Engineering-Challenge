@@ -20,5 +20,30 @@ This Python file implements a microservice using FastAPI that interacts with the
 - Subfeddit Retrieval: A dedicated function retrieves the ID of a subfeddit by its name from the Feddit API. If the subfeddit is not found or an error occurs during the request, appropriate HTTP exceptions are raised.
 - Comments Endpoint: The /comments endpoint fetches the latest comments from a specified subfeddit, with options to filter by date and sort by polarity. It returns the latest 25 comments along with their computed sentiment.
 
+## API Parameters
+The GET /comments endpoint in this FastAPI-based microservice allows you to retrieve and analyze comments from a specific "subfeddit." The parameters allow filtering by date and sorting based on sentiment polarity. Below is an explanation of the expected parameters:
+
+**Request Parameters**
+- `subfeddit_name (required, str)`:
+The name of the subfeddit from which to retrieve comments.
+- `start_date (optional, datetime)`:
+Filters comments to only include those created after this date.
+Date should be provided in ISO 8601 format (e.g., 2023-08-01T00:00:00).
+- `end_date (optional, datetime)`:
+Filters comments to only include those created before this date.
+Date should also be in ISO 8601 format.
+- `sort_by_polarity (optional, bool)`:
+When true, comments are sorted by their polarity score in descending order (from most positive to most negative).
+Default is false, which returns comments in the order they were retrieved.
+
+**Response Structure**
+The API response includes a JSON object with a list of comments. Each comment contains the following fields:
+- `id (str)`: Unique identifier of the comment.
+- `username (str)`: Username of the commenter.
+- `text (str)`: Content of the comment.
+- `created_at (datetime)`: Datetime when the comment was created.
+- `polarity_score (float)`: Polarity score of the comment text (range: -1.0 to 1.0).
+- `sentiment (str)`: The sentiment analysis result (Positive or Negative), based on the polarity score.
+
 ## Github Workflows
 A workflow has been configured to run linting with the flake8 library, the .flake8 file contains some configurations to exclude files (like the virtual environment) from the linting process and it also excludes some rule codes related to spacing inside the python files.
