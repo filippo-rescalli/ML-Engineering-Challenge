@@ -1,0 +1,10 @@
+venv/
+feddit-api/
+
+*.env
+*.env.*
+env.*
+
+*.feddit-api
+*.feddit-api.*
+feddit-api.*
