@@ -13,7 +13,7 @@ To accomplish this, I used FastAPI as the framework for developing the API endpo
 ## API Description
 This Python file implements a microservice using FastAPI that interacts with the Feddit API to retrieve and analyze comments from specified subfeddits. The service is designed to classify comments as either positive or negative based on their sentiment.
 
-### Key Features
+**Key Features**
 - FastAPI Framework: The application utilizes FastAPI to create a RESTful API
 - Comment Model: The Comment class, defined using Pydantic, structures the comment data, including fields for ID, username, text, creation date, polarity score, and sentiment classification.
 - Sentiment Analysis: The service employs the TextBlob library to calculate the polarity score of comments, which is used to determine whether the sentiment is positive or negative.
