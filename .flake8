@@ -4,15 +4,4 @@ exclude =
     feddit-api,
     .github
 ignore = 
-    E302,  # expected 2 blank lines, found 1
-    E501,  # line too long
-    E265,  # block comment should start with '# '
-    W293,  # blank line contains whitespace
-    W291,  # trailing whitespace
-    W292,  # no newline at end of file
-    E303,  # too many blank lines
-    F841,  # assigned to but never used
-    F401,  # imported but unused
-    E225,  # missing whitespace around operator
-    E125,  # continuation line with same indent as next logical line
-    E117   # over-indented
+    E302, E501, E265, W293, W291, W292, E303, F841, F401, E225, E125, E117
