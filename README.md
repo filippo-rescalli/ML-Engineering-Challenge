@@ -19,3 +19,6 @@ This Python file implements a microservice using FastAPI that interacts with the
 - Sentiment Analysis: The service employs the TextBlob library to calculate the polarity score of comments, which is used to determine whether the sentiment is positive or negative.
 - Subfeddit Retrieval: A dedicated function retrieves the ID of a subfeddit by its name from the Feddit API. If the subfeddit is not found or an error occurs during the request, appropriate HTTP exceptions are raised.
 - Comments Endpoint: The /comments endpoint fetches the latest comments from a specified subfeddit, with options to filter by date and sort by polarity. It returns the latest 25 comments along with their computed sentiment.
+
+## Github Workflows
+A workflow has been configured to run linting with the flake8 library, the .flake8 file contains some configurations to exclude files (like the virtual environment) from the linting process and it also excludes some rule codes related to spacing inside the python files.
